@@ -1,0 +1,28 @@
+//cpp
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        int i = 0, j = 0;
+        int ss = s.size();
+        int ts = t.size();
+        while (i < ss && j < ts) {
+            if (t[j] == s[i]) {
+                i++;
+            }
+            j++;
+        }
+        return i == ss;
+    }
+};
+
+/Python
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        sp = tp = 0
+
+        while sp < len(s) and tp < len(t):
+            if s[sp] == t[tp]:
+                sp += 1
+            tp += 1
+        
+        return sp == len(s)
